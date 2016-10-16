@@ -5,5 +5,5 @@ package com.EGAR.auction.models;
  */
 public class User {
     private name;
-    private time
+    private time;
 }
