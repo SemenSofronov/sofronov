@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/sofronov.iml" filepath="$PROJECT_DIR$/sofronov.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EGARproject.iml" filepath="$PROJECT_DIR$/EGARproject.iml" />
     </modules>
   </component>
 </project>
