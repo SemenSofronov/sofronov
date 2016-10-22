@@ -10,7 +10,7 @@ public class Bet {
     private int price;
     private Client owner;
 
-    public Bet(Lot lot, int price, String owner) {
+    public Bet(Lot lot, int price, Client owner) {
         this.lot = lot;
         this.price = price;
         this.owner = owner;
@@ -28,7 +28,7 @@ public class Bet {
         return price;
     }
 
-    public String getOwner() {
+    public Client getOwner() {
         return owner;
     }
 
@@ -36,7 +36,26 @@ public class Bet {
         this.price = price;
     }
 
-    public void setOwner(String owner) {
+    public void setOwner(Client owner) {
         this.owner = owner;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Bet bet = (Bet) o;
+
+        if (price != bet.price) return false;
+        return lot.equals(bet.lot);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = lot.hashCode();
+        result = 31 * result + price;
+        return result;
     }
 }

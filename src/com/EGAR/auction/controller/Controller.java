@@ -1,8 +1,11 @@
 package com.EGAR.auction.controller;
 
+import com.EGAR.auction.Storage.ListOfBets;
 import com.EGAR.auction.Storage.ListOfGoods;
+import com.EGAR.auction.Storage.ListOfUsers;
 import com.EGAR.auction.models.Goods.Bet;
 import com.EGAR.auction.models.Goods.Lot;
+import com.EGAR.auction.models.Users.Admin;
 import com.EGAR.auction.models.Users.Client;
 
 import java.util.ArrayList;
@@ -19,11 +22,20 @@ public class Controller {
     }
 
     public static void addNewLot(Lot lot) {
-        ListOfGoods.getListOfGoods().add(new Lot(lot.getOwner(),lot.getCategory(),lot.getName(),lot.getCount(),lot.getStartPrice(),lot.getMaxPrice()));
+        ListOfGoods.getListOfGoods().add(lot);
     }
 
-    public static void addNewBet (Lot lot, int price, String owner) {
-        ListOfGoods.getListOfGoods().get(ListOfGoods.getListOfGoods().indexOf(lot)).listOfBets.add(new Bet(lot, price, owner));
+    public static void addNewUser(Object user) {
+        if (user instanceof Client) {
+            ListOfUsers.getListOfClients().add((Client) user);
+        }
+        if (user instanceof Admin) {
+            ListOfUsers.getListOfAdmins().add((Admin) user);
+        }
+    }
+
+    public static void addNewBet (Bet bet) {
+        ListOfBets.getListOfBets().add(bet);
     }
 
     public static ArrayList<Lot> listOfLotsByCategory(String category){
