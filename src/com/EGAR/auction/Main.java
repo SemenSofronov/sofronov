@@ -1,7 +1,7 @@
 package com.EGAR.auction;
 
 import com.EGAR.auction.Storage.*;
-import com.EGAR.auction.controller.ControllerAll;
+import com.EGAR.auction.controller.ControllerAdd;
 import com.EGAR.auction.view.ViewConsole;
 
 /**
@@ -9,7 +9,7 @@ import com.EGAR.auction.view.ViewConsole;
  */
 public class Main {
     public static void main(String args[]) {
-        new ControllerAll();
+        new ControllerAdd();
         new ListOfUsers();
         new ListOfGoods();
         new ListOfBets();

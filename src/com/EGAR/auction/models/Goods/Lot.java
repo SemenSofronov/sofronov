@@ -17,7 +17,6 @@ public class Lot {
     private int startPrice;
     private int maxPrice;
 
-    public ArrayList<Bet> listOfBets = new ArrayList<>();
 
     public Lot(Client owner, String category, String name, int count, int startPrice, int maxPrice) {
         this.owner = owner;
@@ -85,10 +84,13 @@ public class Lot {
         this.category = category;
     }
 
-    public ArrayList<Bet> getListOfBets() {
-        return listOfBets;
+    public int getId() {
+        return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
     @Override
     public boolean equals(Object o) {

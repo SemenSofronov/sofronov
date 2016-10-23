@@ -1,24 +1,24 @@
 package com.EGAR.auction.Storage;
 
-import com.EGAR.auction.controller.ControllerAll;
+import com.EGAR.auction.controller.ControllerAdd;
 import com.EGAR.auction.models.Goods.Bet;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by Admin on 23.10.2016.
  */
 public class ListOfBets {
 
-    private static List<Bet> listOfBets;
+    private static ArrayList<Bet> listOfBets = new ArrayList<>();
 
     public ListOfBets() {
-        ControllerAll.addNewBet(new Bet(ListOfGoods.getListOfGoods().get(0), 50000, ListOfUsers.getListOfClients().get(2)));
-        ControllerAll.addNewBet(new Bet(ListOfGoods.getListOfGoods().get(0), 60000, ListOfUsers.getListOfClients().get(0)));
-        ControllerAll.addNewBet(new Bet(ListOfGoods.getListOfGoods().get(1), 70000, ListOfUsers.getListOfClients().get(1)));
+        ControllerAdd.addNewBet(new Bet(ListOfGoods.getListOfGoods().get(0), 50000, ListOfUsers.getListOfClients().get(2)));
+        ControllerAdd.addNewBet(new Bet(ListOfGoods.getListOfGoods().get(0), 60000, ListOfUsers.getListOfClients().get(0)));
+        ControllerAdd.addNewBet(new Bet(ListOfGoods.getListOfGoods().get(1), 70000, ListOfUsers.getListOfClients().get(1)));
     }
 
-    public static List<Bet> getListOfBets() {
+    public static ArrayList<Bet> getListOfBets() {
         return listOfBets;
     }
 
