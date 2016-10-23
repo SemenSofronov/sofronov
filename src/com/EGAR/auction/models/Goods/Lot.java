@@ -20,7 +20,6 @@ public class Lot {
     public ArrayList<Bet> listOfBets = new ArrayList<>();
 
     public Lot(Client owner, String category, String name, int count, int startPrice, int maxPrice) {
-        this.id = ListOfGoods.getListOfGoods().size()+1;
         this.owner = owner;
         this.category = category;
         this.name = name;

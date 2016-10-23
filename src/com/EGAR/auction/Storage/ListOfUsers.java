@@ -1,9 +1,8 @@
 package com.EGAR.auction.Storage;
 
-import com.EGAR.auction.controller.Controller;
+import com.EGAR.auction.controller.ControllerAll;
 import com.EGAR.auction.models.Users.Admin;
 import com.EGAR.auction.models.Users.Client;
-import com.EGAR.auction.models.Users.User;
 
 import java.util.List;
 
@@ -15,10 +14,10 @@ public class ListOfUsers {
     private static List<Admin> listOfAdmins;
 
     public ListOfUsers() {
-        Controller.addNewUser(new Client("Dmitriy","123"));
-        Controller.addNewUser(new Client("Ivan","123"));
-        Controller.addNewUser(new Client("July","123"));
-        Controller.addNewUser(new Admin("admin","password"));
+        ControllerAll.addNewUser(new Client("Dmitriy","123"));
+        ControllerAll.addNewUser(new Client("Ivan","123"));
+        ControllerAll.addNewUser(new Client("July","123"));
+        ControllerAll.addNewUser(new Admin("admin","password"));
     }
 
     public static List<Client> getListOfClients() {

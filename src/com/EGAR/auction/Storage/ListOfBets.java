@@ -1,6 +1,6 @@
 package com.EGAR.auction.Storage;
 
-import com.EGAR.auction.controller.Controller;
+import com.EGAR.auction.controller.ControllerAll;
 import com.EGAR.auction.models.Goods.Bet;
 
 import java.util.List;
@@ -13,9 +13,9 @@ public class ListOfBets {
     private static List<Bet> listOfBets;
 
     public ListOfBets() {
-        Controller.addNewBet(new Bet(ListOfGoods.getListOfGoods().get(0), 50000, ListOfUsers.getListOfClients().get(2)));
-        Controller.addNewBet(new Bet(ListOfGoods.getListOfGoods().get(0), 60000, ListOfUsers.getListOfClients().get(0)));
-        Controller.addNewBet(new Bet(ListOfGoods.getListOfGoods().get(1), 70000, ListOfUsers.getListOfClients().get(1)));
+        ControllerAll.addNewBet(new Bet(ListOfGoods.getListOfGoods().get(0), 50000, ListOfUsers.getListOfClients().get(2)));
+        ControllerAll.addNewBet(new Bet(ListOfGoods.getListOfGoods().get(0), 60000, ListOfUsers.getListOfClients().get(0)));
+        ControllerAll.addNewBet(new Bet(ListOfGoods.getListOfGoods().get(1), 70000, ListOfUsers.getListOfClients().get(1)));
     }
 
     public static List<Bet> getListOfBets() {

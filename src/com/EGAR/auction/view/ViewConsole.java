@@ -1,6 +1,6 @@
 package com.EGAR.auction.view;
 
-import com.EGAR.auction.controller.Controller;
+import com.EGAR.auction.controller.ControllerAll;
 import com.EGAR.auction.models.Goods.Bet;
 import com.EGAR.auction.models.Goods.Lot;
 import com.EGAR.auction.models.Users.*;
@@ -76,7 +76,7 @@ public class ViewConsole {
                 case "1":
                     System.out.print("Please, enter category: ");
                     ans = scanner.next();
-                    //Controller
+                    //ControllerAll
                     showLotsByCategory(ans);
                     break;
                 case "2":
@@ -86,8 +86,8 @@ public class ViewConsole {
                     else {
                         System.out.print("Please, enter name of lot: ");
                         ans = scanner.next();
-                        //Controller
-                        showBetsByLot(Controller.searchLotByName(ans));
+                        //ControllerAll
+                        showBetsByLot(ControllerAll.searchLotByName(ans));
                     }
                     break;
                 case "3":
@@ -96,8 +96,8 @@ public class ViewConsole {
                     }
                     else {
                         if (currentUser instanceof Client) {
-                            //Controller
-                            showLotsAndBetsForUser(Controller.showingLotsByUser(((Client) currentUser).getLogin()));
+                            //ControllerAll
+                            showLotsAndBetsForUser(ControllerAll.listOfLotsByUser(((Client) currentUser).getLogin()));
                         }
                     }
                     break;
@@ -105,8 +105,8 @@ public class ViewConsole {
                     if (currentUser instanceof Admin) {
                         System.out.print("Please, enter name of user: ");
                         ans = scanner.next();
-                        //Controller
-                        showStatistic(Controller.showingLotsByUser(ans), Controller.showingBetsByUser(ans));
+                        //ControllerAll
+                        showStatistic(ControllerAll.listOfLotsByUser(ans), ControllerAll.showingBetsByUser(ans));
                     }
                     else {
                         System.out.print("You have no rights!\n");
@@ -122,7 +122,7 @@ public class ViewConsole {
     }
 
     private void showLotsByCategory(String category) {
-        ArrayList<Lot> lotsByCategory = Controller.listOfLotsByCategory(category);
+        ArrayList<Lot> lotsByCategory = ControllerAll.listOfLotsByCategory(category);
         System.out.print("\nName\tCount\tStartPrice\tMaxPrice\n");
         for (int i = 0; i < lotsByCategory.size(); i++) {
             System.out.print("Lot number "+i+"\n");
